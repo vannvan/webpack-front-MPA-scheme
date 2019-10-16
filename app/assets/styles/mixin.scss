@@ -1,15 +1,10 @@
 $mixinType:'web';
 
-@charset "utf-8";
 $browser-default-font-size: 75px !default; //变量的值可以根据自己需求定义
 @function pxTorem($px) {
-    //$px为需要转换的字号
     @return $px / $browser-default-font-size*1rem;
 }
 
-// *{
-//   -webkit-overflow-scrolling: touch;
-// }
 
 body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
   margin:0;
@@ -117,8 +112,6 @@ $float:left;
   -moz-border-radius:getUnit($radius); -webkit-border-radius:getUnit($radius); border-radius:getUnit($radius);
 }
 
-//背景图
-//@include bg100('~@/assets/images/img-icon.png');
 @mixin bg100($url){
   background:url($url); background-size:100% 100%;
   -moz-background-size:100% 100%; background-repeat:no-repeat;
@@ -141,9 +134,7 @@ $float:left;
   }
 }
 
-
 //箭头
-//@include arrow(top,15px,#fff);
 @mixin arrow($direction,$size,$color) {
     width: 0;
     height: 0;
