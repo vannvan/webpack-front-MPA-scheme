@@ -8,7 +8,7 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import PostCssPresetEnv from "postcss-preset-env";
 import PostcssFlexBugsfixes from "postcss-flexbugs-fixes";
 import friendlyFormatter from "eslint-formatter-friendly"
-
+var stripInlineComments = require('postcss-strip-inline-comments');
 const postCssLoaderConfig = {
   loader: "postcss-loader",
   options: {
@@ -41,11 +41,13 @@ export default {
       options: {
         formatter: friendlyFormatter
       }
-    }, {
+    },
+    {
       test: /\.js$/,
       include: appPath,
       use: "babel-loader"
-    }, {
+    },
+    {
       test: /\.css$/,
       use: [
         isDevelopment && "style-loader",
@@ -58,7 +60,8 @@ export default {
         "css-loader",
         postCssLoaderConfig
       ].filter(Boolean)
-    }, {
+    },
+    {
       test: /\.less$/,
       include: appPath,
       use: [
@@ -71,16 +74,18 @@ export default {
         },
         "css-loader",
         "less-loader",
-        postCssLoaderConfig
+        postCssLoaderConfig,
       ].filter(Boolean)
-    }, {
+    },
+    {
       test: /\.(png\jpe?g|gif)$/,
       use: [
         {
           loader: "file-loader"
         }
       ]
-    }, {
+    },
+    {
       test: /\.(png|jpe?g|gif)$/,
       use: [{
         loader: "url-loader",
@@ -89,15 +94,34 @@ export default {
           outputPath: "images"
         }
       }]
-    }, {
+    },
+    {
       test: /\.(woff2?|eot|ttf|otf|svg)(\?.*)?$/,
       loader: "url-loader",
       options: {
         limit: 10000
       }
-    }, {
+    },
+    {
       test: /\.html$/,
       use: ["html-withimg-loader"] // html中的img标签
+    },
+    {
+      test: /\.(scss|sass)$/,
+      // sass不分离的写法，顺序不能变
+      // use: ["style-loader", "css-loader", "sass-loader"],
+      use: [
+        isDevelopment && "style-loader",
+        isProduction && {
+          loader: MiniCssExtractPlugin.loader,
+          options: {
+            publicPath: "../"
+          }
+        },
+        "css-loader",
+        "sass-loader",
+        postCssLoaderConfig
+      ].filter(Boolean)
     }
   ]
 }

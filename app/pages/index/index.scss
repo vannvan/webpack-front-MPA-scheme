@@ -1,0 +1,125 @@
+*{
+  color: #fff;
+}
+//啦啦啦
+h1{
+  font-size: 50px;
+  text-align: center;
+  padding: 0;
+  margin:0
+}
+h2{
+  text-align: center;
+}
+body{
+  margin:0;
+}
+.cli-header{
+  height: 80px;
+  width: 100%;
+  background: #00649F;
+  line-height: 80px;
+  display: flex;
+  justify-content: space-between;
+  color: #f6f6f6;
+  .logo{
+    width: 30%;
+    margin-left: 10%;
+  }
+  .nav{
+      margin-right: 10%;
+      li{
+        list-style: none;
+        float: left;
+        padding: 0 50px;
+        font-weight: bold;
+        cursor: pointer;
+        a{
+          text-decoration: none
+        }
+      }
+  }
+}
+.cli-main{
+  width: 100%;
+  background: #01AAC1;
+  .intro{
+    height: 400px;
+    height: auto;
+    padding-top:100px;
+    color: #fff;
+    h2{
+      text-align: center;
+      margin-top: 35px
+    }
+    .cli-btn{
+      width: 150px;
+      height: 50px;
+      margin: 25px auto;
+      display: block;
+      text-align: center;
+      line-height: 50px;
+      border:#f6f6f6 solid 1px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+  .features{
+    background: #00649F;
+    height: auto;
+    padding-bottom: 35px;
+    padding-top: 50px;
+    .title{
+      height: 80px;
+      text-align: center;
+      font-size: 35px;
+      line-height: 80px;
+    }
+    .list{
+      display: flex;
+      .item-col-3{
+        width: 30%;
+        margin:0 5%;
+        height: 180px;
+        padding: 35px;
+        line-height: 45px;
+        h3{
+          line-height: 60px;
+        }
+      }
+    }
+  }
+  .issues{
+    background: #01AAC1;
+    padding-bottom: 35px;
+    padding-top: 50px;
+    height: auto;
+    .title{
+      height: 80px;
+      text-align: center;
+      font-size: 35px;
+      line-height: 80px;
+    }
+    .list{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .item-col-2{
+        width: 36%;
+        margin:25px 5%;
+        height: 180px;
+        padding:35px;
+        p{
+          line-height: 45px;
+        }
+      }
+    }
+  }
+}
+.cli-footer{
+  height: 60px;
+  width: 100%;
+  background: #00649F;
+  text-align: center;
+  line-height: 60px;
+}

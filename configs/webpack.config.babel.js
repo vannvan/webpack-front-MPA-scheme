@@ -19,14 +19,14 @@ export default  {
     path: isProduction ? path.resolve(__dirname, "../dist") : undefined
   },
   resolve: {
-    extensions: [".js", ".css", ".less", ".json"],
+    extensions: [".js", ".css", ".less", ".json",'scss'],
     alias: {
       "@": appPath,
     }
   },
   performance: {
-    hints: "warning", // "error" or false are valid too
-    maxEntrypointSize: 50000, // in bytes, default 250k
+    hints: false, //  false | "error" | "warning" // 不显示性能提示 | 以错误形式提示 | 以警告...
+    maxEntrypointSize: 500000, // in bytes, default 250k
     maxAssetSize: 450000, // in bytes
   },
   externals: {

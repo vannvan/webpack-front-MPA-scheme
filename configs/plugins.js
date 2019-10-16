@@ -53,13 +53,13 @@ function getHtmlWebpackPluginConfigs () {
       chunks: ["vendor", "common", entryName],
       ...isProduction ? {
         minify: {
-          removeComments: true,
-          collapseWhitespace: true,
-          removeRedundantAttributes: true,
-          useShortDoctype: true,
-          removeEmptyAttributes: true,
-          removeStyleLinkTypeAttributes: true,
-          keepClosingSlash: true,
+          removeComments: true,  //删除注释
+          collapseWhitespace: true,  //删除空格
+          removeRedundantAttributes: true,  //删除多余的属性
+          useShortDoctype: true, //使用短的文档类型
+          removeEmptyAttributes: true,   //删除空属性
+          removeStyleLinkTypeAttributes: true,  //删除style的类型属性， type="text/css"
+          keepClosingSlash: true,  //
           minifyJS: true,
           minifyCSS: true,
           minifyURLs: true,
