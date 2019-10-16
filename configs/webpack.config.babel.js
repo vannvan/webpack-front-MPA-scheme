@@ -19,7 +19,7 @@ export default  {
     path: isProduction ? path.resolve(__dirname, "../dist") : undefined
   },
   resolve: {
-    extensions: [".js", ".css", ".less", ".json",'scss'],
+    extensions: [".js", ".css", ".less", ".json",'.scss'],
     alias: {
       "@": appPath,
     }

@@ -1,6 +1,6 @@
 // import { cloneDeep, throttle, debounce } from "lodash-es";
 import $ from "jquery";
-// import "reset.css";
+import "reset.css";
 import "@/assets/styles/mixin.scss";
 import "./index.scss";
 
