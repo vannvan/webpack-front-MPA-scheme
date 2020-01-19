@@ -50,7 +50,6 @@
     "postcss-flexbugs-fixes": "^4.1.0",
     "postcss-loader": "^2.0.8",
     "postcss-preset-env": "^6.7.0",
-    "postcss-strip-inline-comments": "^0.1.5",
     "progress-bar-webpack-plugin": "^1.12.1",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
